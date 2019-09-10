@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>My Schedule</h1>
+    <input type="text" id="inputBtn" [(ngModel)]="keyword" (keyup)='keyUpEvent($event)' />
+    <hr />
+
+    <h2>ToDo List</h2>
+    <ul>
+        <!-- way 1: use Hidden to hide item not satisfied the status -->
+        <!-- <li *ngFor="let item of todoList; let key=index" [hidden]='item.status==true'> -->
+        <!-- way 2: use ng-for loop -->
+        <li *ngFor="let item of todoList; let key=index">
+            <span *ngIf="item.status==false">
+                <input type="checkbox" [(ngModel)]="item.status" />
+                {{item.title}}
+                <button (click)="deleItem(key)"> x </button>
+            </span>
+        </li>
+    </ul>
+
+    <h2>Finished</h2>
+    <ul>
+        <!-- way 1: use Hidden to hide item not satisfied the status -->
+        <!-- <li *ngFor="let item of todoList; let key=index" [hidden]='item.status==false'> -->
+        <!-- way 2: use ng-for loop -->
+        <li *ngFor="let item of todoList; let key=index">
+            <span *ngIf="item.status==true">
+                <input type="checkbox" [(ngModel)]="item.status" />
+                {{item.title}}
+                <button (click)="deleItem(key)"> x </button>
+            </span>
+        </li>
+    </ul>
+
+</div>

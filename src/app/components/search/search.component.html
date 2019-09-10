@@ -1,0 +1,9 @@
+<div class="container">
+    <input type="text" id="inputBtn" [(ngModel)]="keyword"/>
+    <button (click)="searchItem()">Search</button>
+
+    <hr />
+    <ul id=newList>
+        <li *ngFor="let item of newList; let key=index">{{item}} <button (click)="deleItem(key)">x</button></li>
+    </ul>
+</div>
