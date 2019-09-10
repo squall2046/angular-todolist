@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 // ```中文部分是使用 service + localStorage 把 app 数据存入 localStorage:
-// Service: 所有的 components 都可以调用 service. Service 是model, re-useable 数据.
-// (angular 里的 service 是一个单例对象，在应用生命周期结束的时候（关闭浏览器）才会被清除
-// 而 controllers 在不需要的时候就会被销毁了。)
+// a.Service: Service 是model, re-usable 数据.
+// b.所有的 components 都可以调用 service; service 不可以调用 components;
+//   不同的 services 之间可以调用; 父子 components 之间可以传值.
+// c.angular 里的 service 是一个单例对象，在应用生命周期结束的时候（关闭浏览器）才会被清除
+// 而 controllers 在不需要的时候就会被销毁了。
 
 // 1.引入 StorageService:
 import { StorageService } from '../../services/storage.service';
