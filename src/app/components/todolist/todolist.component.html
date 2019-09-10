@@ -10,7 +10,7 @@
         <!-- way 2: use ng-for loop -->
         <li *ngFor="let item of todoList; let key=index">
             <span *ngIf="item.status==false">
-                <input type="checkbox" [(ngModel)]="item.status" />
+                <input type="checkbox" [(ngModel)]="item.status" (change)='updateItemStatus()'/>
                 {{item.title}}
                 <button (click)="deleItem(key)"> x </button>
             </span>
@@ -24,7 +24,7 @@
         <!-- way 2: use ng-for loop -->
         <li *ngFor="let item of todoList; let key=index">
             <span *ngIf="item.status==true">
-                <input type="checkbox" [(ngModel)]="item.status" />
+                <input type="checkbox" [(ngModel)]="item.status" (change)='updateItemStatus()'/>
                 {{item.title}}
                 <button (click)="deleItem(key)"> x </button>
             </span>

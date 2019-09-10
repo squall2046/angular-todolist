@@ -3,7 +3,7 @@
     <button (click)="searchItem()">Search</button>
 
     <hr />
-    <ul id=newList>
+    <ul>
         <li *ngFor="let item of newList; let key=index">{{item}} <button (click)="deleItem(key)">x</button></li>
     </ul>
 </div>
